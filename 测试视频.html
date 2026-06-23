@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>向雪岑品牌实操教学课程视频合集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:微软雅黑}
+body{background:#f4f6f9;padding:20px max(10px,calc(50% - 600px))}
+h1{text-align:center;margin-bottom:24px;color:#111;font-size:24px}
+.box{background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 10px #00000012}
+video{width:100%;border-radius:6px;background:#000;margin-bottom:20px}
+.list{display:grid;gap:10px;margin-bottom:15px}
+.item{padding:12px 16px;border:1px solid #dde2ec;border-radius:6px;cursor:pointer}
+.item:hover{background:#eef6ff;border-color:#3677f5}
+.item.active{background:#e1edff;border-color:#2563eb}
+.tips{color:#666;font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<h1>向雪岑品牌实操教学课程视频合集</h1>
+<div class="box">
+<video id="play" controls></video>
+<div class="list" id="videoList">
+<!-- 替换成你腾讯云复制的视频链接 -->
+<div class="item" data-src="https://xxc-video-2026-1429652751.cos.ap-chengdu.myqcloud.com/%E8%83%B6%E5%8E%9F.mp4">实操教学 胶原</div>
+<div class="item" data-src="https://xxc-video-2026-1429652751.cos.ap-chengdu.myqcloud.com/%E9%92%88%E6%B8%85.mp4">实操教学 针清</div>
+</div>
+<p class="tips">问题肌·学术派</p>
+</div>
+<script>
+const player=document.getElementById('play');
+const items=document.querySelectorAll('.item');
+player.src=items[0].dataset.src;
+items[0].classList.add('active');
+items.forEach(i=>{
+i.onclick=()=>{
+items.forEach(a=>a.classList.remove('active'));
+i.classList.add('active');
+player.src=i.dataset.src;player.play();
+}
+})
+</script>
+</body>
+</html>
